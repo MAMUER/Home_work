@@ -1,0 +1,8 @@
+﻿  Main.cpp
+C:\Users\ProPc\OneDrive\Рабочий стол\программирование\Homework_1_2\Homework_1_2\Main.cpp(59,31): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\ProPc\OneDrive\Рабочий стол\программирование\Homework_1_2\Homework_1_2\Main.cpp(76,43): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\ProPc\OneDrive\Рабочий стол\программирование\Homework_1_2\Homework_1_2\Main.cpp(114,43): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\ProPc\OneDrive\Рабочий стол\программирование\Homework_1_2\Homework_1_2\Main.cpp(141,39): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\ProPc\OneDrive\Рабочий стол\программирование\Homework_1_2\Homework_1_2\Main.cpp(158,31): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\ProPc\OneDrive\Рабочий стол\программирование\Homework_1_2\Homework_1_2\Main.cpp(162,35): warning C4018: <: несоответствие типов со знаком и без знака
+  Homework_1_2.vcxproj -> C:\Users\ProPc\OneDrive\Рабочий стол\программирование\Homework_1_2\Debug\Homework_1_2.exe
