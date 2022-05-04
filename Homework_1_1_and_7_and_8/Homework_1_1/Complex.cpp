@@ -135,7 +135,7 @@ Complex Complex::Max_complex(Complex x, Complex y)
 {
 	if (x.re == y.re and x.im == y.im)
 	{
-		cout << "\nЧисла равны\n";
+		cout << "\nГ—ГЁГ±Г«Г  Г°Г ГўГ­Г»\n";
 
 		return x;
 	}
@@ -354,9 +354,9 @@ ostream& operator <<(ostream& out, const Complex& n1)
 
 istream& operator >>(istream& in, Complex& n1)
 {
-	cout << "Действительная часть\n";
+	cout << "Real part\n";
 	in >> n1.re;
-	cout << "Мнимая часть\n";
+	cout << "Image part\n";
 	in >> n1.im;
 	return in;
 }
