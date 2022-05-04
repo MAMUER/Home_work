@@ -22,7 +22,6 @@ public:
 
     }
 
-
     double Set_r();
 
     void Print_parametres();
