@@ -20,7 +20,7 @@ public:
 		this->worth = a;
 	}
 
-	friend ostream& operator <<(ostream& buff, const Property& n1) //перегрузка cout (через дружественную функцию)
+	friend ostream& operator <<(ostream& buff, const Property& n1)
 	{
 		buff << n1.worth << "\n";
 		return buff;
