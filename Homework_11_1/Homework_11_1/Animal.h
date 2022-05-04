@@ -42,7 +42,7 @@ public:
 
 	Cat(const int& a) :Animal(a)
 	{
-		cout << "Cat copy\n";
+		cout << "Constructor Cat\n";
 	}
 
 	void print() override
@@ -58,7 +58,7 @@ public:
 
 	Dog(const int& a) :Animal(a)
 	{
-		cout << "Dog copy\n";
+		cout << "Constructor Dog\n";
 	}
 
 	void print() override { cout << "Dog age = " << this->Get_age() << endl; }
@@ -71,7 +71,7 @@ public:
 
 	Parrot(const int& a) :Animal(a)
 	{
-		cout << "Parrot copy\n";
+		cout << "Constructor Parrot\n";
 	}
 
 	void print() override { cout << "Parrot age = " << this->Get_age() << endl; }
