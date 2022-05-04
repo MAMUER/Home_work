@@ -14,12 +14,12 @@ private:
 	double im = 0;
 	
 public:
-	Complex() //конструктор
+	Complex() //Constructor
 	{
 
 	}
 
-	~Complex() //деструктор
+	~Complex() //Destructor
 	{
 
 	}
