@@ -9,16 +9,16 @@ class Animal
 {
 	int age = 0;
 public:
-	Animal() { cout << "конструктор животного\n"; }
+	Animal() { cout << "Constructor Animal\n"; }
 	Animal(int a)
 	{
-		cout << "конструктор животного\n";
+		cout << "Constructor animal\n";
 		this->age = a;
 	}
 
 	Animal(const Animal& a)
 	{
-		cout << "копирование\n";
+		cout << "Animal copy\n";
 		this->age = a.age;
 	}
 
@@ -37,43 +37,43 @@ class Cat :public Animal
 public:
 	Cat() :Animal()
 	{
-		cout << "конструктор кота\n";
+		cout << "Constructor Cat\n";
 	}
 
 	Cat(const int& a) :Animal(a)
 	{
-		cout << "конструктор кота\n";
+		cout << "Cat copy\n";
 	}
 
 	void print() override
 	{
-		cout << "Возраст кота = " << this->Get_age() << endl;
+		cout << "Cat age = " << this->Get_age() << endl;
 	}
 };
 
 class Dog :public Animal
 {
 public:
-	Dog() { cout << "конструктор собаки\n"; }
+	Dog() { cout << "Constructor Dog\n"; }
 
 	Dog(const int& a) :Animal(a)
 	{
-		cout << "конструктор собаки\n";
+		cout << "Dog copy\n";
 	}
 
-	void print() override { cout << "Возраст собаки = " << this->Get_age() << endl; }
+	void print() override { cout << "Dog age = " << this->Get_age() << endl; }
 };
 
 class Parrot :public Animal
 {
 public:
-	Parrot() { cout << "конструктор попугая\n"; }
+	Parrot() { cout << "Constructor Parrot\n"; }
 
 	Parrot(const int& a) :Animal(a)
 	{
-		cout << "конструктор попугая\n";
+		cout << "Parrot copy\n";
 	}
 
-	void print() override { cout << "Возраст попугая = " << this->Get_age() << endl; }
+	void print() override { cout << "Parrot age = " << this->Get_age() << endl; }
 };
 #endif
