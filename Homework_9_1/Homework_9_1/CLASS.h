@@ -7,7 +7,7 @@ using namespace std;
 
 class Property
 {
-private:
+protected:
 	double worth;
 public:
 	Property()
@@ -20,7 +20,7 @@ public:
 		this->worth = a;
 	}
 
-	friend ostream& operator <<(ostream& buff, const Property& n1)
+	friend ostream& operator <<(ostream& buff, const Property& n1) 
 	{
 		buff << n1.worth << "\n";
 		return buff;
@@ -28,7 +28,7 @@ public:
 
 	virtual ~Property() = default;
 
-	virtual double tax(double a) = 0;
+	virtual double tax() = 0;
 };
 
 class Apartment :public Property
@@ -39,9 +39,9 @@ public:
 
 	}
 
-	double tax(double a) override
+	double tax() override
 	{
-		return a / 1000;
+		return worth / 1000;
 	}
 };
 
@@ -53,9 +53,9 @@ public:
 
 	}
 
-	double tax(double a) override
+	double tax() override
 	{
-		return a / 200;
+		return worth / 200;
 	}
 };
 
@@ -67,9 +67,9 @@ public:
 
 	}
 
-	double tax(double a) override
+	double tax() override
 	{
-		return a / 500;
+		return worth / 500;
 	}
 };
 
