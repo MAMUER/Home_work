@@ -1,4 +1,4 @@
-﻿#include "CLASS.h"
+#include "CLASS.h"
 
 using namespace std;
 
@@ -8,54 +8,29 @@ int main()
 
 	Property* arr[7];
 
-	double A = rand() % 20000000 + 100000;
+	double A = rand() % 20'000'000 + 100000;
+	
+	arr[0] = new Apartment(A);
+	A = rand() % 20'000'000 + 100000;
+	arr[1] = new Apartment(A);
+	arr[2] = new Apartment(A);
+	arr[3] = new Car(A);
+	arr[4] = new Car(A);
+	arr[5] = new CountryHouse(A);
+	arr[6] = new CountryHouse(A);
 
-	Apartment a(A);
+	cout << "Налог = " << a.tax() << endl;
 
-	double B = rand() % 20000000 + 100000;
+	cout << "Налог = " << b.tax() << endl;
 
-	Apartment b(B);
+	cout << "Налог = " << c.tax() << endl;
 
-	double C = rand() % 20000000 + 100000;
+	cout << "Налог = " << d.tax() << endl;
 
-	Apartment c(C);
+	cout << "Налог = " << e.tax() << endl;
 
-	double D = rand() % 20000000 + 100000;
+	cout << "Налог = " << f.tax() << endl;
 
-	Car d(D);
-
-	double E = rand() % 20000000 + 100000;
-
-	Car e(E);
-
-	double F = rand() % 20000000 + 100000;
-
-	CountryHouse f(F);
-
-	double G = rand() % 20000000 + 100000;
-
-	CountryHouse g(G);
-
-	arr[0] = &a;
-	arr[1] = &b;
-	arr[2] = &c;
-	arr[3] = &d;
-	arr[4] = &e;
-	arr[5] = &f;
-	arr[6] = &g;
-
-	cout << "Налог = " << a.tax(A) << endl;
-
-	cout << "Налог = " << b.tax(B) << endl;
-
-	cout << "Налог = " << c.tax(C) << endl;
-
-	cout << "Налог = " << d.tax(D) << endl;
-
-	cout << "Налог = " << e.tax(E) << endl;
-
-	cout << "Налог = " << f.tax(F) << endl;
-
-	cout << "Налог = " << g.tax(G) << endl;
+	cout << "Налог = " << g.tax() << endl;
 
 }
