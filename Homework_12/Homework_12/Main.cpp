@@ -47,7 +47,7 @@ int main()
 
     int const N = 10;
 
-    /*int arr[N];
+    /*int* arr = new int[N];
 
     for (int i = 0; i < N; i++)
     {
