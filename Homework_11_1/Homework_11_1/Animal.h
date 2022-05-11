@@ -1,69 +1,75 @@
-#include "Complex.h"
-#include <ctime>
+#ifndef ANIMAL_H
+#define ANIMAL_H
 
-template <typename T>
+#include <iostream>
 
-void sort(T* arr, int N)
+using namespace std;
+
+class Animal
 {
-    int i = 0, j = 1, k = N;
+protected:
+	int age = 0;
+public:
+	Animal() { cout << "конструктор животного\n"; }
+	Animal(int a)
+	{
+		cout << "конструктор животного\n";
+		this->age = a;
+	}
 
-    for (int j = 0; j < N; )
-    {
-        for (int i = (j + 1);;)
-        {
-            if (i == N)
-            {
-                j++;
-                break;
-            }
+	Animal(const Animal& a)
+	{
+		cout << "копирование\n";
+		this->age = a.age;
+	}
 
-            if (arr[j] > arr[i])
-            {
-                T c = arr[j];
-                arr[j] = arr[i];
-                arr[i] = c;
+	virtual ~Animal() = default;
+	
+	virtual void print() = 0;
+};
 
-                break;
-            }
-
-            if (arr[j] <= arr[i])
-            {
-                i++;
-            }
-        }
-    }
-
-    for (int z = 0; z < N; z++)
-    {
-        cout << arr[z] << " \n";
-    }
-
-    cout << "\n";
-}
-
-int main()
+class Cat :public Animal
 {
-    setlocale(LC_ALL, "rus");
+public:
+	Cat() :Animal()
+	{
+		cout << "конструктор кота\n";
+	}
 
-    int const N = 10;
+	Cat(const int& a) :Animal(a)
+	{
+		cout << "конструктор кота\n";
+	}
 
-    /*int* arr = new int[N];
+	void print() override
+	{
+		cout << "Возраст кота = " << age << endl;
+	}
+};
 
-    for (int i = 0; i < N; i++)
-    {
-        arr[i] = rand() % 10;
-    }*/
+class Dog :public Animal
+{
+public:
+	Dog() { cout << "конструктор собаки\n"; }
 
-    Complex* arr = new Complex[N];
+	Dog(const int& a) :Animal(a)
+	{
+		cout << "конструктор собаки\n";
+	}
 
-    for (int i = 0; i < N; i++)
-    {
-        arr[i].Change_re(rand() % 10);
+	void print() override { cout << "Возраст собаки = " << age << endl; }
+};
 
-        arr[i].Change_im(rand() % 10);
-    }
+class Parrot :public Animal
+{
+public:
+	Parrot() { cout << "конструктор попугая\n"; }
 
-    sort(arr, N);
+	Parrot(const int& a) :Animal(a)
+	{
+		cout << "конструктор попугая\n";
+	}
 
-    delete[]arr;
-}
+	void print() override { cout << "Возраст попугая = " << age << endl; }
+};
+#endif
