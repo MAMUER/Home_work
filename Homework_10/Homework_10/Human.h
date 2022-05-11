@@ -8,7 +8,7 @@ using namespace std;
 
 class Human
 {
-private:
+protected:
 	string surname;
 	string name;
 	string midname;
@@ -29,26 +29,6 @@ public:
 		this->name = b;
 		this->midname = c;
 		this->age = d;
-	}
-
-	string Get_surname()
-	{
-		return this->surname;
-	}
-
-	string Get_name()
-	{
-		return this->name;
-	}
-
-	string Get_midname()
-	{
-		return this->midname;
-	}
-
-	int Get_age()
-	{
-		return this->age;
 	}
 
 	virtual ~Human() = default;
@@ -72,7 +52,17 @@ public:
 
 	void print() override
 	{
-		cout << this->Get_surname() << " " << this->Get_name() << " " << this->Get_midname() << " " << this->Get_age() << " " << this->on_lesson << endl;
+		cout << surname << " " << name << " " << midname << " " << age << " лет,";
+
+		if (on_lesson)
+		{
+			cout << " на уроке " << endl;
+		}
+
+		else 
+		{
+			cout << " не на уроке " << endl;
+		}
 	}
 };
 
@@ -92,7 +82,7 @@ public:
 
 	void print() override
 	{
-		cout << this->Get_surname() << " " << this->Get_name() << " " << this->Get_midname() << " " << this->Get_age() << " " << this->number_of_workers << endl;
+		cout << surname << " " << name << " " << midname << " " << age << " лет, " << number_of_workers << " работников" << endl;
 	}
 };
 #endif
