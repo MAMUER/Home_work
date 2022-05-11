@@ -38,7 +38,7 @@ public:
 
 class Student :public Human
 {
-	bool on_lesson = false;
+	bool on_lesson;
 public:
 	Student()
 	{
