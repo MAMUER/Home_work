@@ -1,79 +1,69 @@
-#ifndef ANIMAL_H
-#define ANIMAL_H
+#include "Complex.h"
+#include <ctime>
 
-#include <iostream>
+template <typename T>
 
-using namespace std;
-
-class Animal
+void sort(T* arr, int N)
 {
-	int age = 0;
-public:
-	Animal() { cout << "Constructor Animal\n"; }
-	Animal(int a)
-	{
-		cout << "Constructor animal\n";
-		this->age = a;
-	}
+    int i = 0, j = 1, k = N;
 
-	Animal(const Animal& a)
-	{
-		cout << "Animal copy\n";
-		this->age = a.age;
-	}
+    for (int j = 0; j < N; )
+    {
+        for (int i = (j + 1);;)
+        {
+            if (i == N)
+            {
+                j++;
+                break;
+            }
 
-	virtual ~Animal() = default;
+            if (arr[j] > arr[i])
+            {
+                T c = arr[j];
+                arr[j] = arr[i];
+                arr[i] = c;
 
-	int Get_age()
-	{
-		return this->age;
-	}
+                break;
+            }
 
-	virtual void print() = 0;
-};
+            if (arr[j] <= arr[i])
+            {
+                i++;
+            }
+        }
+    }
 
-class Cat :public Animal
+    for (int z = 0; z < N; z++)
+    {
+        cout << arr[z] << " \n";
+    }
+
+    cout << "\n";
+}
+
+int main()
 {
-public:
-	Cat() :Animal()
-	{
-		cout << "Constructor Cat\n";
-	}
+    setlocale(LC_ALL, "rus");
 
-	Cat(const int& a) :Animal(a)
-	{
-		cout << "Constructor Cat\n";
-	}
+    int const N = 10;
 
-	void print() override
-	{
-		cout << "Cat age = " << this->Get_age() << endl;
-	}
-};
+    /*int* arr = new int[N];
 
-class Dog :public Animal
-{
-public:
-	Dog() { cout << "Constructor Dog\n"; }
+    for (int i = 0; i < N; i++)
+    {
+        arr[i] = rand() % 10;
+    }*/
 
-	Dog(const int& a) :Animal(a)
-	{
-		cout << "Constructor Dog\n";
-	}
+    Complex* arr = new Complex[N];
 
-	void print() override { cout << "Dog age = " << this->Get_age() << endl; }
-};
+    for (int i = 0; i < N; i++)
+    {
+        arr[i].Change_re(rand() % 10);
 
-class Parrot :public Animal
-{
-public:
-	Parrot() { cout << "Constructor Parrot\n"; }
+        arr[i].Change_im(rand() % 10);
+    }
 
-	Parrot(const int& a) :Animal(a)
-	{
-		cout << "Constructor Parrot\n";
-	}
+    sort(arr, N);
 
-	void print() override { cout << "Parrot age = " << this->Get_age() << endl; }
-};
-#endif
+    delete[]arr;
+}
