@@ -1,5 +1,5 @@
-﻿#include <iostream>
-
+#include <iostream>
+#include <ctime>
 using namespace std;
 
 void invert(int* arr, int n)
@@ -93,32 +93,32 @@ void non_increase(int* arr, int n)
     cout << "\n" << arr[0] << " ";
 }
 
-void function(int* arr, int n)
+void (*function(int sum, int *arr))(int* arr, int n)
 {
-    int sum = 0;
-
-    for (int i = 0; i < n; i++)
-    {
-        sum += arr[i];
-    }
-
     if (sum < arr[0])
     {
-        invert(arr, n);
+        return invert;
     }
     else if (sum == arr[0])
     {
-        non_decrease(arr, n);
+        return non_decrease;
     }
     else if (sum > arr[0])
     {
-        non_increase(arr, n);
-    }
+        return non_increase;
+    }    
+}
+
+int sum()
+{
+    return 0;
 }
 
 int main()
 {
     int n = rand() % 15 + 10;
+
+    int sum = 0;
 
     int* arr = new int[n];
 
@@ -127,11 +127,16 @@ int main()
         arr[i] = rand() % 20;
     }
 
+    for (int i = 0; i < n; i++)
+    {
+        sum += arr[i];
+    }
+
     void (*jj)(int*, int);
 
-    jj = function;
+    jj = function(sum, arr);
 
-    (*jj)(arr, n);
+    jj(arr, n);        
 
     delete[] arr;
 
