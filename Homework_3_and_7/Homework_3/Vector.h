@@ -12,14 +12,28 @@ private:
 	double x = 0;
 	double y = 0;
 	double z = 0;
-	
+
 public:
-	Vector()
+	Vector() //Constructor
 	{
 
 	}
 
-	~Vector()
+	Vector(double x, double y, double z) //Constructor
+	{
+		this->x = x;
+		this->y = y;
+		this->z = z;
+	}
+
+	Vector(const Vector& a) //Copy
+	{
+		this->x = a.x;
+		this->y = a.y;
+		this->z = a.z;
+	}
+
+	~Vector() //Destructor
 	{
 
 	}
