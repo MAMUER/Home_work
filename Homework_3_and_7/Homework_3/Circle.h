@@ -9,18 +9,28 @@ class Circle
 {
 private:
 
-    double r = 0;    
+    double r = 0;
 
 public:
-    Circle()
-    {
+	Circle() //Constructor
+	{
 
-    }
+	}
 
-    ~Circle()
-    {
+	Circle(double r) //Constructor
+	{
+		this->r = r;
+	}
 
-    }
+	Circle(const Circle& a) //Copy
+	{
+		this->r = a.r;
+	}
+
+	~Circle() //Destructor
+	{
+
+	}
 
     double Set_r();
 
