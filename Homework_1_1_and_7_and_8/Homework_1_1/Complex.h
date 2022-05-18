@@ -12,11 +12,23 @@ private:
 
 	double re = 0;
 	double im = 0;
-	
+
 public:
 	Complex() //Constructor
 	{
 
+	}
+
+	Complex(double re, double im) //Constructor
+	{
+		this->re = re;
+		this->im = im;
+	}
+
+	Complex(const Complex& a) //Copy
+	{
+		this->re = a.re;
+		this->im = a.im;
 	}
 
 	~Complex() //Destructor
@@ -47,13 +59,13 @@ public:
 	Complex Max_complex(Complex x, Complex y);
 
 	Complex operator +(const Complex& n2);
-	
+
 	Complex operator -(const Complex& n2);
 
 	Complex operator *(const Complex& n2);
 
 	Complex operator /(const Complex& n2);
-	
+
 	void operator =(const Complex& n2);
 
 	bool operator >(const Complex& n2);
@@ -66,11 +78,11 @@ public:
 
 	bool operator !=(const Complex& n2);
 
-	bool operator ==(const Complex& n2);	
+	bool operator ==(const Complex& n2);
 
 	friend ostream& operator <<(ostream& out, const Complex& n1);
 
-	friend istream& operator >>(istream& in, Complex& n1);	
+	friend istream& operator >>(istream& in, Complex& n1);
 };
 
 #endif
